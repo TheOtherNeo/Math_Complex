@@ -1,6 +1,6 @@
 <?php
 /**
- * Created by Neil Bezuidenhout
+ * Created by TheOtherNeo
  * 24 November 2023
  * Some math functions required for the rest of the program to function.
  * These will follow the conventions of other libraries so that it can be swapped if needed.
