@@ -5,38 +5,6 @@
  * Some math functions required for the rest of the program to function.
  * These will follow the conventions of other libraries so that it can be swapped if needed.
  */
-namespace MyMathFunctions{
-
-    /**
-     * To convert from Polar Coordinates (r,θ) to Cartesian Coordinates (x,y)
-     * @param float $r
-     * Radius
-     * @param float $theta
-     * Angle in radians
-     * @return array
-     * [x, y]
-     */
-    function polar_to_cartesian( ?float $r , ?float $theta, ): array {
-        $x = $r * cos($theta);
-        $y = $r * sin($theta);
-        return [$x, $y];
-    }
-
-    /**
-     * To convert from Cartesian Coordinates (x,y) to Polar Coordinates (r,θ)
-     * @param float $x
-     * Radius
-     * @param float $y
-     * Angle in radians
-     * @return array
-     * [r, theta]
-     */
-    function cartesian_to_polar( ?float $x, ?float $y, ): array {
-        $r = hypot($x,$y);
-        $theta = atan2($y,$x);
-        return [$r, $theta];
-    }
-}
 
 // Was unable to figure out how to install the pear libraries on HERD, so will just use this my own similar implementation for now following the same constructors and returns.
 namespace Math_Complex{
