@@ -28,7 +28,7 @@ namespace Math_Complex{
             // Only string values of "i" and "j" should be accepted.
             if ($suffix === "i" | $suffix === "j") {
                 $this->suffix = $suffix;
-            } else throw new \Exception("Incorrect suffix value.");
+            } else throw new \ValueError("Incorrect suffix value.");
         }
 
         public function __serialize(): array
