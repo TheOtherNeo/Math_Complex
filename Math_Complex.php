@@ -183,7 +183,20 @@ namespace Math_Complex{
             $z->real = $real * $c1->real;
             $z->im = $real * $c1->im;
             return $z;
-        }
+        } //public static function multReal
+
+        /**
+         * Returns the exponentiation of a complex numbers to a real power: z = c1^(real) 
+         * @param Math_Complex $c1
+         * @param float $real
+         * @return Math_Complex $z
+         */
+        public static function powReal( Math_Complex $c1 , float $real ): Math_Complex
+        {
+            $magnitude = pow($c1->abs(),$real);     // Multiply the magnitudes
+            $angle = $c1->arg() * $real;            // Add the angles
+            return Math_ComplexOp::createFromPolar($magnitude, $angle);
+        } //public static function powReal
     } //class Math_ComplexOp extends Math_Complex
 
     /**
