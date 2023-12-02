@@ -194,7 +194,7 @@ namespace Math_Complex{
         /**
          * Returns the sum of two or more complex numbers in x + yi or x + yj
          */
-        public static function sum(...$c): Math_Complex
+        public static function sum(&...$c): Math_Complex
         {
             // Object into which values will be placed.
             $z = new Math_Complex();
