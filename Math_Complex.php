@@ -57,6 +57,30 @@ namespace Math_Complex{
         }
 
         /**
+         * Returns the magnitude (also referred as norm) of the number.
+         * https://www.houseofmath.com/encyclopedia/numbers-and-quantities/numbers/complex-numbers/introduction/what-is-the-norm-and-the-argument-of-a-complex-number
+         * @return float absolute value.
+         */
+        public function abs():float
+        {
+            return sqrt( pow($this->real,2) + pow($this->im,2) );
+        }
+
+        /**
+         * Returns the argument of the complex number.
+         * https://www.houseofmath.com/encyclopedia/numbers-and-quantities/numbers/complex-numbers/introduction/what-is-the-norm-and-the-argument-of-a-complex-number
+         * @return float theta in radians.
+         */
+        public function arg():float
+        {
+            // Check for divide by zero.
+            if (!$this->real) {
+                throw new \Exception('Division by zero.');
+            }
+            return atan($this->im / $this->real);
+        }
+
+        /**
          * Returns the imaginary part of the complex number
          */
         public function getIm():float
@@ -121,6 +145,15 @@ namespace Math_Complex{
             return $z;
         } // function createFromPolar
 
+        /**
+         * Checks if a given object is an instance of Math_Complex
+         * @param mixed $c1
+         * @return bool
+         */
+        public static function isComplex( mixed &$c1 ):bool
+        {
+            return $c1 instanceof Math_Complex;
+        }
 
         // https://www.mathwarehouse.com/algebra/complex-number/multiply-complex-number.php
         /**
