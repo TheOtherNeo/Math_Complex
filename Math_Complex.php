@@ -194,7 +194,7 @@ namespace Math_Complex{
         /**
          * Returns the sum of two or more complex numbers in x + yi or x + yj
          */
-        public static function sum(...$complex): Math_Complex
+        public static function sum(...$c): Math_Complex
         {
             // Object into which values will be placed.
             $z = new Math_Complex();
@@ -203,7 +203,7 @@ namespace Math_Complex{
             $z->im = 0;
 
             // First need to seperate the real from the complex numbers
-            foreach ($complex as $k => $v) {
+            foreach ($c as $k => $v) {
                 $z->real += $v->getReal();
                 $z->im += $v->getIm();
             }
