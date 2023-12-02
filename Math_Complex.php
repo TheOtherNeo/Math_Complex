@@ -10,8 +10,8 @@
 namespace Math_Complex{
     // https://www.mathsisfun.com/numbers/complex-numbers.html
     class Math_Complex {
-        public float $real;
-        public float $im;
+        protected float $real;
+        protected float $im;
         private string $suffix;
         /**
          * @param float $real
@@ -109,8 +109,8 @@ namespace Math_Complex{
         {
             $z = new Math_Complex();
             
-            $z->real = $c1->real + $c2->real;
-            $z->im = $c1->im + $c2->im;
+            $z->real = $c1->getReal() + $c2->getReal();
+            $z->im = $c1->getIm() + $c2->getIm();
             return $z;
         }
 
@@ -166,8 +166,8 @@ namespace Math_Complex{
         {
             $z = new Math_Complex();
             // (a+bi)(c+di) = (ac−bd) + (ad+bc)i
-            $z->real = ($c1->real * $c2->real) - ($c1->im * $c2->im);
-            $z->im = ($c1->real * $c2->im) + ($c1->im * $c2->real);
+            $z->real = ($c1->getReal() * $c2->getReal()) - ($c1->getIm() * $c2->getIm());
+            $z->im = ($c1->getReal() * $c2->getIm()) + ($c1->getIm() * $c2->getReal());
             return $z;
         }
         /**
@@ -180,8 +180,8 @@ namespace Math_Complex{
         {
             $z = new Math_Complex();
             // No need for special calculations, just multiply each item with the value
-            $z->real = $real * $c1->real;
-            $z->im = $real * $c1->im;
+            $z->real = $real * $c1->getReal();
+            $z->im = $real * $c1->getIm();
             return $z;
         } //public static function multReal
 
